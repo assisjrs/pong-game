@@ -1,6 +1,6 @@
 ﻿namespace Assisjrs.Ponggame
 {
-    partial class Game
+    partial class Screen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Screen));
             this.WorldFrame = new System.Windows.Forms.Panel();
             this.ball = new System.Windows.Forms.PictureBox();
             this.pb_Enemy = new System.Windows.Forms.PictureBox();
