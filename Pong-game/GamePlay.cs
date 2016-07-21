@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Assisjrs.Ponggame
@@ -13,8 +14,8 @@ namespace Assisjrs.Ponggame
 
         public GamePlay(Panel worldFrame, PictureBox playerPicture, PictureBox enemyPicture, PictureBox ballPicture)
         {
-            player = new Player(playerPicture, worldFrame.Height);
-            enemy = new Enemy(enemyPicture);
+            player = new Player(playerPicture, worldFrame.Height, new Point(3, 67));
+            enemy = new Enemy(enemyPicture, 0, new Point(409, 67));
             ball = new Ball(ballPicture, worldFrame.Width, worldFrame.Height);
 
             ball.HitPoint += BallHitPoint;

@@ -10,22 +10,25 @@ namespace Assisjrs.Ponggame
             get { return player.Bounds; }
         }
 
-        private PictureBox player;
+        protected PictureBox player;
         private int height;
 
         public bool Up { get; set; }
         public bool Down { get; set; } = false;
         public int Speed { get; set; }
 
-        public Player(PictureBox player, int height)
+        public Point OverLocation { get; set; }
+
+        public Player(PictureBox player, int height, Point overLocation)
         {
             this.player = player;
             this.height = height;
+            OverLocation = overLocation;
         }
 
         public void Over()
         {
-            player.Location = new Point(3, 67);
+            player.Location = OverLocation;
             ResetScore();
         }
 
