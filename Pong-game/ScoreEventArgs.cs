@@ -4,7 +4,7 @@ namespace Assisjrs.Ponggame
 {
     public class ScoreEventArgs : EventArgs
     {
-        public bool IsPlayer { get; set; }
+        public bool IsPlayerA { get; set; }
         public int Value { get; set; }
     }
 }

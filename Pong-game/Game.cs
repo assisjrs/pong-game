@@ -5,8 +5,8 @@ namespace Assisjrs.Ponggame
     public class Game
     {
         private GamePlay gamePlay;
-        private int scorePlayer = 0;
-        private int scoreEnemy = 0;
+        private int scorePlayerA = 0;
+        private int scorePlayerB = 0;
         private int round = 0;
         private Timer timerMoveball;
     }

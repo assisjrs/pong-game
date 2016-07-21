@@ -4,6 +4,6 @@ namespace Assisjrs.Ponggame
 {
     public class HitPointEventArgs : EventArgs
     {
-        public bool IsPlayer { get; set; }
+        public bool IsPlayerA { get; set; }
     }
 }

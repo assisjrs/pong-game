@@ -32,44 +32,44 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Screen));
             this.WorldFrame = new System.Windows.Forms.Panel();
             this.ball = new System.Windows.Forms.PictureBox();
-            this.pb_Enemy = new System.Windows.Forms.PictureBox();
-            this.pb_Player = new System.Windows.Forms.PictureBox();
+            this.pb_PlayerB = new System.Windows.Forms.PictureBox();
+            this.pb_PlayerA = new System.Windows.Forms.PictureBox();
             this.timerMoveball = new System.Windows.Forms.Timer(this.components);
             this.labelStart = new System.Windows.Forms.Label();
             this.timer_Sec = new System.Windows.Forms.Timer(this.components);
-            this.enemy_4 = new System.Windows.Forms.PictureBox();
-            this.enemy_5 = new System.Windows.Forms.PictureBox();
-            this.player_5 = new System.Windows.Forms.PictureBox();
-            this.player_4 = new System.Windows.Forms.PictureBox();
-            this.enemy_1 = new System.Windows.Forms.PictureBox();
-            this.enemy_2 = new System.Windows.Forms.PictureBox();
-            this.enemy_3 = new System.Windows.Forms.PictureBox();
-            this.player_3 = new System.Windows.Forms.PictureBox();
-            this.player_2 = new System.Windows.Forms.PictureBox();
-            this.player_1 = new System.Windows.Forms.PictureBox();
+            this.playerB_4 = new System.Windows.Forms.PictureBox();
+            this.playerB_5 = new System.Windows.Forms.PictureBox();
+            this.playerA_5 = new System.Windows.Forms.PictureBox();
+            this.playerA_4 = new System.Windows.Forms.PictureBox();
+            this.playerB_1 = new System.Windows.Forms.PictureBox();
+            this.playerB_2 = new System.Windows.Forms.PictureBox();
+            this.playerB_3 = new System.Windows.Forms.PictureBox();
+            this.playerA_3 = new System.Windows.Forms.PictureBox();
+            this.playerA_2 = new System.Windows.Forms.PictureBox();
+            this.playerA_1 = new System.Windows.Forms.PictureBox();
             this.labelTime = new System.Windows.Forms.Label();
             this.WorldFrame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Enemy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PlayerB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PlayerA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_1)).BeginInit();
             this.SuspendLayout();
             // 
             // WorldFrame
             // 
             this.WorldFrame.BackColor = System.Drawing.Color.Black;
             this.WorldFrame.Controls.Add(this.ball);
-            this.WorldFrame.Controls.Add(this.pb_Enemy);
-            this.WorldFrame.Controls.Add(this.pb_Player);
+            this.WorldFrame.Controls.Add(this.pb_PlayerB);
+            this.WorldFrame.Controls.Add(this.pb_PlayerA);
             this.WorldFrame.Dock = System.Windows.Forms.DockStyle.Top;
             this.WorldFrame.Location = new System.Drawing.Point(0, 0);
             this.WorldFrame.Name = "WorldFrame";
@@ -90,21 +90,21 @@
             // 
             // pb_Enemy
             // 
-            this.pb_Enemy.BackColor = System.Drawing.Color.Red;
-            this.pb_Enemy.Location = new System.Drawing.Point(409, 67);
-            this.pb_Enemy.Name = "pb_Enemy";
-            this.pb_Enemy.Size = new System.Drawing.Size(15, 70);
-            this.pb_Enemy.TabIndex = 1;
-            this.pb_Enemy.TabStop = false;
+            this.pb_PlayerB.BackColor = System.Drawing.Color.Red;
+            this.pb_PlayerB.Location = new System.Drawing.Point(409, 67);
+            this.pb_PlayerB.Name = "pb_Enemy";
+            this.pb_PlayerB.Size = new System.Drawing.Size(15, 70);
+            this.pb_PlayerB.TabIndex = 1;
+            this.pb_PlayerB.TabStop = false;
             // 
             // pb_Player
             // 
-            this.pb_Player.BackColor = System.Drawing.Color.SkyBlue;
-            this.pb_Player.Location = new System.Drawing.Point(3, 67);
-            this.pb_Player.Name = "pb_Player";
-            this.pb_Player.Size = new System.Drawing.Size(15, 70);
-            this.pb_Player.TabIndex = 0;
-            this.pb_Player.TabStop = false;
+            this.pb_PlayerA.BackColor = System.Drawing.Color.SkyBlue;
+            this.pb_PlayerA.Location = new System.Drawing.Point(3, 67);
+            this.pb_PlayerA.Name = "pb_Player";
+            this.pb_PlayerA.Size = new System.Drawing.Size(15, 70);
+            this.pb_PlayerA.TabIndex = 0;
+            this.pb_PlayerA.TabStop = false;
             // 
             // timerMoveball
             // 
@@ -130,93 +130,93 @@
             // 
             // enemy_4
             // 
-            this.enemy_4.BackColor = System.Drawing.Color.Silver;
-            this.enemy_4.Location = new System.Drawing.Point(303, 215);
-            this.enemy_4.Name = "enemy_4";
-            this.enemy_4.Size = new System.Drawing.Size(15, 15);
-            this.enemy_4.TabIndex = 12;
-            this.enemy_4.TabStop = false;
+            this.playerB_4.BackColor = System.Drawing.Color.Silver;
+            this.playerB_4.Location = new System.Drawing.Point(303, 215);
+            this.playerB_4.Name = "enemy_4";
+            this.playerB_4.Size = new System.Drawing.Size(15, 15);
+            this.playerB_4.TabIndex = 12;
+            this.playerB_4.TabStop = false;
             // 
             // enemy_5
             // 
-            this.enemy_5.BackColor = System.Drawing.Color.Silver;
-            this.enemy_5.Location = new System.Drawing.Point(282, 215);
-            this.enemy_5.Name = "enemy_5";
-            this.enemy_5.Size = new System.Drawing.Size(15, 15);
-            this.enemy_5.TabIndex = 11;
-            this.enemy_5.TabStop = false;
+            this.playerB_5.BackColor = System.Drawing.Color.Silver;
+            this.playerB_5.Location = new System.Drawing.Point(282, 215);
+            this.playerB_5.Name = "enemy_5";
+            this.playerB_5.Size = new System.Drawing.Size(15, 15);
+            this.playerB_5.TabIndex = 11;
+            this.playerB_5.TabStop = false;
             // 
             // player_5
             // 
-            this.player_5.BackColor = System.Drawing.Color.Silver;
-            this.player_5.Location = new System.Drawing.Point(132, 215);
-            this.player_5.Name = "player_5";
-            this.player_5.Size = new System.Drawing.Size(15, 15);
-            this.player_5.TabIndex = 10;
-            this.player_5.TabStop = false;
+            this.playerA_5.BackColor = System.Drawing.Color.Silver;
+            this.playerA_5.Location = new System.Drawing.Point(132, 215);
+            this.playerA_5.Name = "player_5";
+            this.playerA_5.Size = new System.Drawing.Size(15, 15);
+            this.playerA_5.TabIndex = 10;
+            this.playerA_5.TabStop = false;
             // 
             // player_4
             // 
-            this.player_4.BackColor = System.Drawing.Color.Silver;
-            this.player_4.Location = new System.Drawing.Point(111, 215);
-            this.player_4.Name = "player_4";
-            this.player_4.Size = new System.Drawing.Size(15, 15);
-            this.player_4.TabIndex = 9;
-            this.player_4.TabStop = false;
+            this.playerA_4.BackColor = System.Drawing.Color.Silver;
+            this.playerA_4.Location = new System.Drawing.Point(111, 215);
+            this.playerA_4.Name = "player_4";
+            this.playerA_4.Size = new System.Drawing.Size(15, 15);
+            this.playerA_4.TabIndex = 9;
+            this.playerA_4.TabStop = false;
             // 
             // enemy_1
             // 
-            this.enemy_1.BackColor = System.Drawing.Color.Silver;
-            this.enemy_1.Location = new System.Drawing.Point(366, 215);
-            this.enemy_1.Name = "enemy_1";
-            this.enemy_1.Size = new System.Drawing.Size(15, 15);
-            this.enemy_1.TabIndex = 8;
-            this.enemy_1.TabStop = false;
+            this.playerB_1.BackColor = System.Drawing.Color.Silver;
+            this.playerB_1.Location = new System.Drawing.Point(366, 215);
+            this.playerB_1.Name = "enemy_1";
+            this.playerB_1.Size = new System.Drawing.Size(15, 15);
+            this.playerB_1.TabIndex = 8;
+            this.playerB_1.TabStop = false;
             // 
             // enemy_2
             // 
-            this.enemy_2.BackColor = System.Drawing.Color.Silver;
-            this.enemy_2.Location = new System.Drawing.Point(345, 215);
-            this.enemy_2.Name = "enemy_2";
-            this.enemy_2.Size = new System.Drawing.Size(15, 15);
-            this.enemy_2.TabIndex = 7;
-            this.enemy_2.TabStop = false;
+            this.playerB_2.BackColor = System.Drawing.Color.Silver;
+            this.playerB_2.Location = new System.Drawing.Point(345, 215);
+            this.playerB_2.Name = "enemy_2";
+            this.playerB_2.Size = new System.Drawing.Size(15, 15);
+            this.playerB_2.TabIndex = 7;
+            this.playerB_2.TabStop = false;
             // 
             // enemy_3
             // 
-            this.enemy_3.BackColor = System.Drawing.Color.Silver;
-            this.enemy_3.Location = new System.Drawing.Point(324, 215);
-            this.enemy_3.Name = "enemy_3";
-            this.enemy_3.Size = new System.Drawing.Size(15, 15);
-            this.enemy_3.TabIndex = 6;
-            this.enemy_3.TabStop = false;
+            this.playerB_3.BackColor = System.Drawing.Color.Silver;
+            this.playerB_3.Location = new System.Drawing.Point(324, 215);
+            this.playerB_3.Name = "enemy_3";
+            this.playerB_3.Size = new System.Drawing.Size(15, 15);
+            this.playerB_3.TabIndex = 6;
+            this.playerB_3.TabStop = false;
             // 
             // player_3
             // 
-            this.player_3.BackColor = System.Drawing.Color.Silver;
-            this.player_3.Location = new System.Drawing.Point(90, 215);
-            this.player_3.Name = "player_3";
-            this.player_3.Size = new System.Drawing.Size(15, 15);
-            this.player_3.TabIndex = 5;
-            this.player_3.TabStop = false;
+            this.playerA_3.BackColor = System.Drawing.Color.Silver;
+            this.playerA_3.Location = new System.Drawing.Point(90, 215);
+            this.playerA_3.Name = "player_3";
+            this.playerA_3.Size = new System.Drawing.Size(15, 15);
+            this.playerA_3.TabIndex = 5;
+            this.playerA_3.TabStop = false;
             // 
             // player_2
             // 
-            this.player_2.BackColor = System.Drawing.Color.Silver;
-            this.player_2.Location = new System.Drawing.Point(69, 215);
-            this.player_2.Name = "player_2";
-            this.player_2.Size = new System.Drawing.Size(15, 15);
-            this.player_2.TabIndex = 4;
-            this.player_2.TabStop = false;
+            this.playerA_2.BackColor = System.Drawing.Color.Silver;
+            this.playerA_2.Location = new System.Drawing.Point(69, 215);
+            this.playerA_2.Name = "player_2";
+            this.playerA_2.Size = new System.Drawing.Size(15, 15);
+            this.playerA_2.TabIndex = 4;
+            this.playerA_2.TabStop = false;
             // 
             // player_1
             // 
-            this.player_1.BackColor = System.Drawing.Color.Silver;
-            this.player_1.Location = new System.Drawing.Point(48, 215);
-            this.player_1.Name = "player_1";
-            this.player_1.Size = new System.Drawing.Size(15, 15);
-            this.player_1.TabIndex = 3;
-            this.player_1.TabStop = false;
+            this.playerA_1.BackColor = System.Drawing.Color.Silver;
+            this.playerA_1.Location = new System.Drawing.Point(48, 215);
+            this.playerA_1.Name = "player_1";
+            this.playerA_1.Size = new System.Drawing.Size(15, 15);
+            this.playerA_1.TabIndex = 3;
+            this.playerA_1.TabStop = false;
             // 
             // labelTime
             // 
@@ -237,16 +237,16 @@
             this.ClientSize = new System.Drawing.Size(427, 241);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelStart);
-            this.Controls.Add(this.enemy_4);
-            this.Controls.Add(this.enemy_5);
-            this.Controls.Add(this.player_5);
-            this.Controls.Add(this.player_4);
-            this.Controls.Add(this.enemy_1);
-            this.Controls.Add(this.enemy_2);
-            this.Controls.Add(this.enemy_3);
-            this.Controls.Add(this.player_3);
-            this.Controls.Add(this.player_2);
-            this.Controls.Add(this.player_1);
+            this.Controls.Add(this.playerB_4);
+            this.Controls.Add(this.playerB_5);
+            this.Controls.Add(this.playerA_5);
+            this.Controls.Add(this.playerA_4);
+            this.Controls.Add(this.playerB_1);
+            this.Controls.Add(this.playerB_2);
+            this.Controls.Add(this.playerB_3);
+            this.Controls.Add(this.playerA_3);
+            this.Controls.Add(this.playerA_2);
+            this.Controls.Add(this.playerA_1);
             this.Controls.Add(this.WorldFrame);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -263,18 +263,18 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FormKeyUp);
             this.WorldFrame.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Enemy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_Player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.enemy_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PlayerB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_PlayerA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerB_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerA_1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,19 +284,19 @@
 
         private System.Windows.Forms.Panel WorldFrame;
         private System.Windows.Forms.PictureBox ball;
-        private System.Windows.Forms.PictureBox pb_Enemy;
-        private System.Windows.Forms.PictureBox pb_Player;
+        private System.Windows.Forms.PictureBox pb_PlayerB;
+        private System.Windows.Forms.PictureBox pb_PlayerA;
         private System.Windows.Forms.Timer timerMoveball;
-        private System.Windows.Forms.PictureBox player_1;
-        private System.Windows.Forms.PictureBox player_2;
-        private System.Windows.Forms.PictureBox player_3;
-        private System.Windows.Forms.PictureBox enemy_1;
-        private System.Windows.Forms.PictureBox enemy_2;
-        private System.Windows.Forms.PictureBox enemy_3;
-        private System.Windows.Forms.PictureBox player_5;
-        private System.Windows.Forms.PictureBox player_4;
-        private System.Windows.Forms.PictureBox enemy_4;
-        private System.Windows.Forms.PictureBox enemy_5;
+        private System.Windows.Forms.PictureBox playerA_1;
+        private System.Windows.Forms.PictureBox playerA_2;
+        private System.Windows.Forms.PictureBox playerA_3;
+        private System.Windows.Forms.PictureBox playerB_1;
+        private System.Windows.Forms.PictureBox playerB_2;
+        private System.Windows.Forms.PictureBox playerB_3;
+        private System.Windows.Forms.PictureBox playerA_5;
+        private System.Windows.Forms.PictureBox playerA_4;
+        private System.Windows.Forms.PictureBox playerB_4;
+        private System.Windows.Forms.PictureBox playerB_5;
         private System.Windows.Forms.Label labelStart;
         private System.Windows.Forms.Timer timer_Sec;
         private System.Windows.Forms.Label labelTime;

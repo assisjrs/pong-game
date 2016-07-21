@@ -51,7 +51,7 @@ namespace Assisjrs.Ponggame
                 HitPoint(this, e);
         }
 
-        public void Tick(Player player, Enemy enemy)
+        public void Tick(Player playerA, Player playerB)
         {
             if (Force > 0)
             {
@@ -79,7 +79,7 @@ namespace Assisjrs.Ponggame
                 {
                     var hitPoint = new HitPointEventArgs
                     {
-                        IsPlayer = true
+                        IsPlayerA = true
                     };
 
                     OnHitPoint(hitPoint);
@@ -89,7 +89,7 @@ namespace Assisjrs.Ponggame
                     Force = 0;
                 }
 
-                if (!Collision(player))
+                if (!Collision(playerA))
                 {
                     ball.Left -= Speed;
                 }
@@ -104,7 +104,7 @@ namespace Assisjrs.Ponggame
                 {
                     var hitPoint = new HitPointEventArgs
                     {
-                        IsPlayer = false
+                        IsPlayerA = false
                     };
 
                     OnHitPoint(hitPoint);
@@ -114,7 +114,7 @@ namespace Assisjrs.Ponggame
                     Force = 0;
                 }
 
-                if (!Collision(enemy))
+                if (!Collision(playerB))
                 {
                     ball.Left += Speed;
                 }
@@ -173,12 +173,17 @@ namespace Assisjrs.Ponggame
             return ball.Location.X + ball.Width >= width;
         }
 
-        private bool Collision(Enemy enemy)
+        private bool Collision(Player player)
         {
-            var collisionBox = new PictureBox();
-            collisionBox.Bounds = enemy.Bounds;
+            if (!ball.Bounds.IntersectsWith(player.Bounds))
+                return false;
 
-            collisionBox.SetBounds(collisionBox.Location.X - 1, collisionBox.Location.Y, 1, 10);
+            var collisionBox = new PictureBox();
+            collisionBox.Bounds = player.Bounds;
+
+            var offset = GoingLeft ? collisionBox.Width : -1;
+
+            collisionBox.SetBounds(collisionBox.Location.X + offset, collisionBox.Location.Y, 1, 10);
             if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
             {
                 Force = 3;
@@ -219,67 +224,6 @@ namespace Assisjrs.Ponggame
             {
                 Force = -3;
                 return true;
-            }
-
-            return false;
-        }
-
-        private bool Collision(Player player)
-        {
-            if (ball.Bounds.IntersectsWith(player.Bounds))
-            {
-                var collisionBox = new PictureBox();
-
-                collisionBox.Bounds = player.Bounds;
-                collisionBox.SetBounds(collisionBox.Location.X + collisionBox.Width, collisionBox.Location.Y, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = 3;
-                    return true;
-                }
-                collisionBox.SetBounds(collisionBox.Location.X, collisionBox.Location.Y + 5, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = 2;
-                    return true;
-                }
-                collisionBox.SetBounds(collisionBox.Location.X, collisionBox.Location.Y + 10, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = 1;
-                    return true;
-                }
-                collisionBox.SetBounds(collisionBox.Location.X, collisionBox.Location.Y + 10, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = 0;
-                    return true;
-                }
-                collisionBox.SetBounds(collisionBox.Location.X, collisionBox.Location.Y + 10, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = -1;
-                    return true;
-                }
-                collisionBox.SetBounds(collisionBox.Location.X, collisionBox.Location.Y + 10, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = -2;
-                    return true;
-                }
-                collisionBox.SetBounds(collisionBox.Location.X, collisionBox.Location.Y + 10, 1, 10);
-
-                if (ball.Bounds.IntersectsWith(collisionBox.Bounds))
-                {
-                    Force = -3;
-                    return true;
-                }
             }
 
             return false;

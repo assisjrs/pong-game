@@ -10,7 +10,7 @@ namespace Assisjrs.Ponggame
         {
             InitializeComponent();
 
-            gamePlay = new GamePlay(WorldFrame, pb_Player, pb_Enemy, ball);
+            gamePlay = new GamePlay(WorldFrame, pb_PlayerA, pb_PlayerB, ball);
 
             gamePlay.GameStart += GamePlayGameStart;
             gamePlay.ApplyGameSettings += GamePlayApplyGameSettings;
@@ -20,10 +20,10 @@ namespace Assisjrs.Ponggame
 
         private void GamePlayScoreGame(object source, ScoreEventArgs e)
         {
-            var score = scorePlayer;
+            var score = scorePlayerA;
 
-            if (e.IsPlayer)
-                score = scoreEnemy;
+            if (e.IsPlayerA)
+                score = scorePlayerB;
 
             for (var i = 0; i < score.Length; i++)
             {
@@ -48,8 +48,8 @@ namespace Assisjrs.Ponggame
         {
             for (var i = 0; i < 5; i++)
             {
-                scorePlayer[i] = PicID(i + 1);
-                scoreEnemy[i] = PicID(i + 1, true);
+                scorePlayerA[i] = PicID(i + 1);
+                scorePlayerB[i] = PicID(i + 1, true);
             }
 
             WorldFrame.BackColor = Properties.Settings.Default.Color_Frame;
@@ -63,8 +63,8 @@ namespace Assisjrs.Ponggame
 
         private GamePlay gamePlay;
 
-        private PictureBox[] scorePlayer = new PictureBox[5];
-        private PictureBox[] scoreEnemy = new PictureBox[5];
+        private PictureBox[] scorePlayerA = new PictureBox[5];
+        private PictureBox[] scorePlayerB = new PictureBox[5];
         private Color scoreColor = Color.Silver;
 
         private int round = 0;
@@ -135,22 +135,22 @@ namespace Assisjrs.Ponggame
             }
         }
 
-        public PictureBox PicID(int i, bool Enemy = false)
+        public PictureBox PicID(int i, bool playerB = false)
         {
-            if (Enemy)
+            if (playerB)
             {
                 switch (i)
                 {
                     case 1:
-                        return enemy_1;
+                        return playerB_1;
                     case 2:
-                        return enemy_2;
+                        return playerB_2;
                     case 3:
-                        return enemy_3;
+                        return playerB_3;
                     case 4:
-                        return enemy_4;
+                        return playerB_4;
                     case 5:
-                        return enemy_5;
+                        return playerB_5;
                 }
             }
             else
@@ -158,15 +158,15 @@ namespace Assisjrs.Ponggame
                 switch (i)
                 {
                     case 1:
-                        return player_1;
+                        return playerA_1;
                     case 2:
-                        return player_2;
+                        return playerA_2;
                     case 3:
-                        return player_3;
+                        return playerA_3;
                     case 4:
-                        return player_4;
+                        return playerA_4;
                     case 5:
-                        return player_5;
+                        return playerA_5;
                 }
             }
             return ball;

@@ -7,14 +7,14 @@ namespace Assisjrs.Ponggame
     {
         public bool GameOn { get; set; } = false;
 
-        private Player player;
-        private Enemy enemy;
+        private Player playerA;
+        private Player playerB;
         private Ball ball;
 
-        public GamePlay(Panel worldFrame, PictureBox playerPicture, PictureBox enemyPicture, PictureBox ballPicture)
+        public GamePlay(Panel worldFrame, PictureBox playerAPicture, PictureBox playerBPicture, PictureBox ballPicture)
         {
-            player = new Player(playerPicture, worldFrame.Height);
-            enemy = new Enemy(enemyPicture, 0);
+            playerA = new Player(playerAPicture, worldFrame.Height);
+            playerB = new Player(playerBPicture, 0);
             ball = new Ball(ballPicture, worldFrame.Width, worldFrame.Height);
 
             ball.HitPoint += BallHitPoint;
@@ -22,15 +22,15 @@ namespace Assisjrs.Ponggame
 
         private void BallHitPoint(object source, HitPointEventArgs e)
         {
-            if (e.IsPlayer)
-                enemy.Score++;
+            if (e.IsPlayerA)
+                playerB.Score++;
             else
-                player.Score++;
+                playerA.Score++;
 
             var scoreEvent = new ScoreEventArgs
             {
-                IsPlayer = e.IsPlayer,
-                Value = e.IsPlayer ? enemy.Score : player.Score
+                IsPlayerA = e.IsPlayerA,
+                Value = e.IsPlayerA ? playerB.Score : playerA.Score
             };
 
             OnScoreGame(scoreEvent);
@@ -51,11 +51,11 @@ namespace Assisjrs.Ponggame
 
         public void ApplySettings()
         {
-            player.BackColor = Properties.Settings.Default.Color_Player;
-            player.Speed = Properties.Settings.Default.Speed_Player;
+            playerA.BackColor = Properties.Settings.Default.Color_Player;
+            playerA.Speed = Properties.Settings.Default.Speed_Player;
 
-            enemy.BackColor = Properties.Settings.Default.Color_Enemy;
-            enemy.Speed = Properties.Settings.Default.EnemySpeed;
+            playerB.BackColor = Properties.Settings.Default.Color_Enemy;
+            playerB.Speed = Properties.Settings.Default.EnemySpeed;
 
             ball.Speed = Properties.Settings.Default.BallSpeed;
 
@@ -64,28 +64,28 @@ namespace Assisjrs.Ponggame
 
         public void UpStart()
         {
-            player.Down = false;
-            player.Up = true;
+            playerA.Down = false;
+            playerA.Up = true;
         }
         public void UpEnd()
         {
-            player.Up = false;
+            playerA.Up = false;
         }
 
         public void DownStart()
         {
-            player.Up = false;
-            player.Down = true;
+            playerA.Up = false;
+            playerA.Down = true;
         }
         public void DownEnd()
         {
-            player.Down = false;
+            playerA.Down = false;
         }
 
         public void Load()
         {
-            player.Load();
-            enemy.Load();
+            playerA.Load();
+            playerB.Load();
 
             ApplySettings();
             ball.Load();
@@ -142,9 +142,9 @@ namespace Assisjrs.Ponggame
 
             if (GameOn)
             {
-                player.Tick();
-                ball.Tick(player, enemy);
-                enemy.Move(ball.Y);
+                playerA.Tick();
+                ball.Tick(playerA, playerB);
+                playerB.Move(ball.Y);
             }
         }
     }

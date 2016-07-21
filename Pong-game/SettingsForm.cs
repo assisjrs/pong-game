@@ -26,10 +26,10 @@ namespace Assisjrs.Ponggame
                 case "movimentTimer":
                     Settings.Default.Timer_Movement = (int)btn.Value;
                     break;
-                case "enemySpeed":
+                case "playerBSpeed":
                     Settings.Default.EnemySpeed = (int)btn.Value;
                     break;
-                case "playerSpeed":
+                case "playerASpeed":
                     Settings.Default.Speed_Player = (int)btn.Value;
                     break;
             }
@@ -37,23 +37,23 @@ namespace Assisjrs.Ponggame
             Settings.Default.Save();
         }
 
-        private void PlayerClick(object sender, EventArgs e)
+        private void PlayerAClick(object sender, EventArgs e)
         {
             var dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                player.BackColor = dialog.Color;
+                playerA.BackColor = dialog.Color;
                 Settings.Default.Color_Player = dialog.Color;
             }
             Settings.Default.Save();
         }
 
-        private void EnemyClick(object sender, EventArgs e)
+        private void PlayerBClick(object sender, EventArgs e)
         {
             var dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                enemy.BackColor = dialog.Color;
+                playerB.BackColor = dialog.Color;
                 Settings.Default.Color_Enemy = dialog.Color;
             }
             Settings.Default.Save();
@@ -78,14 +78,14 @@ namespace Assisjrs.Ponggame
         private void ResetAllClick(object sender, EventArgs e)
         {
             background.BackColor = Color.White;
-            enemy.BackColor = Color.Red;
-            player.BackColor = Color.SkyBlue;
+            playerB.BackColor = Color.Red;
+            playerA.BackColor = Color.SkyBlue;
 
             ballSpeed.Value = 3;
             
             movimentTimer.Value = 1;
-            enemySpeed.Value = 1;
-            playerSpeed.Value = 1;
+            playerBSpeed.Value = 1;
+            playerASpeed.Value = 1;
 
             Settings.Default.Timer_Movement = 1;
             Settings.Default.BallSpeed = 3;
@@ -101,14 +101,14 @@ namespace Assisjrs.Ponggame
         private void SettingsFormLoad(object sender, EventArgs e)
         {
             background.BackColor = Settings.Default.Color_Frame;
-            enemy.BackColor = Settings.Default.Color_Enemy;
-            player.BackColor = Settings.Default.Color_Player;
+            playerB.BackColor = Settings.Default.Color_Enemy;
+            playerA.BackColor = Settings.Default.Color_Player;
 
             ballSpeed.Value = Settings.Default.BallSpeed;
             
             movimentTimer.Value = Settings.Default.Timer_Movement;
-            enemySpeed.Value = Settings.Default.EnemySpeed;
-            playerSpeed.Value = Settings.Default.Speed_Player;
+            playerBSpeed.Value = Settings.Default.EnemySpeed;
+            playerASpeed.Value = Settings.Default.Speed_Player;
         }
     }
 }
