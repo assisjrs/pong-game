@@ -5,8 +5,8 @@ namespace Assisjrs.Ponggame
 {
     public class Enemy : Player
     {
-        public Enemy(PictureBox player, int height, Point overLocation)
-            : base(player, height, overLocation)
+        public Enemy(PictureBox player, int height)
+            : base(player, height)
         { }
 
         public void ApplySettings()

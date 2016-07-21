@@ -17,19 +17,13 @@ namespace Assisjrs.Ponggame
         public bool Down { get; set; } = false;
         public int Speed { get; set; }
 
-        public Point OverLocation { get; set; }
+        public Point InitialLocation { get; private set; }
 
-        public Player(PictureBox player, int height, Point overLocation)
+        public Player(PictureBox player, int height)
         {
             this.player = player;
             this.height = height;
-            OverLocation = overLocation;
-        }
-
-        public void Over()
-        {
-            player.Location = OverLocation;
-            ResetScore();
+            InitialLocation = player.Location;
         }
 
         public void ApplySettings()
@@ -71,6 +65,7 @@ namespace Assisjrs.Ponggame
         public void Load()
         {
             ResetScore();
+            player.Location = InitialLocation;
         }
     }
 }

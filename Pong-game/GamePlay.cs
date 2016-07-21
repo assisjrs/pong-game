@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Assisjrs.Ponggame
@@ -14,8 +13,8 @@ namespace Assisjrs.Ponggame
 
         public GamePlay(Panel worldFrame, PictureBox playerPicture, PictureBox enemyPicture, PictureBox ballPicture)
         {
-            player = new Player(playerPicture, worldFrame.Height, new Point(3, 67));
-            enemy = new Enemy(enemyPicture, 0, new Point(409, 67));
+            player = new Player(playerPicture, worldFrame.Height);
+            enemy = new Enemy(enemyPicture, 0);
             ball = new Ball(ballPicture, worldFrame.Width, worldFrame.Height);
 
             ball.HitPoint += BallHitPoint;
@@ -79,6 +78,15 @@ namespace Assisjrs.Ponggame
             player.Down = false;
         }
 
+        public void Load()
+        {
+            player.Load();
+            enemy.Load();
+
+            ApplySettings();
+            ball.Load();
+        }
+
         public event EventHandler GameStart;
 
         public void OnGameStart(EventArgs e)
@@ -86,9 +94,11 @@ namespace Assisjrs.Ponggame
             if (GameStart != null)
                 GameStart(this, e);
         }
-
+        
         public void Start()
         {
+            Load();
+
             GameOn = true;
             ball.Start();
 
@@ -108,19 +118,8 @@ namespace Assisjrs.Ponggame
             GameOn = false;
 
             ball.Over();
-            player.Over();
-            enemy.Over();
 
             OnGameOver(EventArgs.Empty);
-        }
-
-        public void Load()
-        {
-            player.Load();
-            enemy.Load();
-
-            ApplySettings();
-            ball.Load();
         }
 
         public delegate void ScoreEventHandler(object source, ScoreEventArgs e);
