@@ -163,11 +163,6 @@ namespace Assisjrs.Ponggame
             return ballForce;
         }
 
-        public void ApplySettings()
-        {
-            Speed = Properties.Settings.Default.BallSpeed;
-        }
-
         private bool CollisionLeft()
         {
             return ball.Location.X <= 0;

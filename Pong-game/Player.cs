@@ -18,18 +18,13 @@ namespace Assisjrs.Ponggame
         public int Speed { get; set; }
 
         public Point InitialLocation { get; private set; }
+        public Color BackColor { get; set; }
 
         public Player(PictureBox player, int height)
         {
             this.player = player;
             this.height = height;
             InitialLocation = player.Location;
-        }
-
-        public void ApplySettings()
-        {
-            player.BackColor = Properties.Settings.Default.Color_Player;
-            Speed = Properties.Settings.Default.Speed_Player;
         }
 
         private bool CollisionUp()
@@ -66,6 +61,18 @@ namespace Assisjrs.Ponggame
         {
             ResetScore();
             player.Location = InitialLocation;
+        }
+
+        public void Move(int ballY)
+        {//TODO: Ajustar referencial para player A ou B.
+            if (player.Location.Y + 28 < ballY)
+            {
+                player.Top += Speed;
+            }
+            else
+            {
+                player.Top -= Speed;
+            }
         }
     }
 }

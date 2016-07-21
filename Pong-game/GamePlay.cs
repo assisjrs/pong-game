@@ -51,9 +51,13 @@ namespace Assisjrs.Ponggame
 
         public void ApplySettings()
         {
-            player.ApplySettings();
-            enemy.ApplySettings();
-            ball.ApplySettings();
+            player.BackColor = Properties.Settings.Default.Color_Player;
+            player.Speed = Properties.Settings.Default.Speed_Player;
+
+            enemy.BackColor = Properties.Settings.Default.Color_Enemy;
+            enemy.Speed = Properties.Settings.Default.EnemySpeed;
+
+            ball.Speed = Properties.Settings.Default.BallSpeed;
 
             OnApplyGameSettings(EventArgs.Empty);
         }
@@ -94,7 +98,7 @@ namespace Assisjrs.Ponggame
             if (GameStart != null)
                 GameStart(this, e);
         }
-        
+
         public void Start()
         {
             Load();
